@@ -1,0 +1,42 @@
+.App {
+  font-family: "Times New Roman", Times;
+  text-align: center;
+  padding: 20px;
+}
+
+.calculator {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+input {
+  padding: 8px;
+  margin: 16px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 70%;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+select {
+  padding: 4px;
+  margin: 16px 10px;
+}
