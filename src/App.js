@@ -11,7 +11,6 @@ function App() {
     <div className="App">
       <h1>Investment Calculators</h1>
       <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
       <div className="content">
         {activeTab === "compound" && <CompoundInterestCalculator />}
         {activeTab === "sip" && <SIPCalculator />}
