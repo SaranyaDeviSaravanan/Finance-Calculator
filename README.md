@@ -5,6 +5,7 @@ This is a React-based web application that offers two types of investment calcul
 Compound Interest Calculator - Calculates the returns on an investment based on compound interest.
 
 This calculator computes the returns from compound interest based on the following formula:
+
 <img width="186" alt="image" src="https://github.com/user-attachments/assets/3318df60-8d40-4531-9a5f-0c0a47c68604" />
 
 Where:
@@ -20,6 +21,7 @@ The Compound Interest (CI) can be calculated as:
 SIP Calculator - Calculates the returns on a monthly SIP (Systematic Investment Plan) investment.
 
 The formula for SIP Investment is:
+
 <img width="305" alt="image" src="https://github.com/user-attachments/assets/ac195e23-5472-4a0e-a788-11eb32095650" />
 Where:
 
