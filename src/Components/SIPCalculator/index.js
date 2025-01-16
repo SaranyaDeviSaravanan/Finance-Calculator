@@ -32,27 +32,30 @@ const SIPCalculator = () => {
     });
   };
 
+  const inputFields = [
+    { label: "Monthly SIP Amount", value: sipAmount, setter: setSipAmount },
+    {
+      label: "Expected Annual Return (%)",
+      value: annualRate,
+      setter: setAnnualRate,
+      isRate: true,
+    },
+    { label: "Duration (in years)", value: years, setter: setYears },
+  ];
+
   return (
     <div className="calculator">
       <h2>SIP Calculator</h2>
       <form onSubmit={handleSIPSubmit}>
-        <InputField
-          label="Monthly SIP Amount"
-          value={sipAmount}
-          setter={setSipAmount}
-        />
-        <InputField
-          label="Expected Annual Return (%)"
-          value={annualRate}
-          setter={setAnnualRate}
-          isRate
-        />
-        <InputField
-          label="Duration (in years)"
-          value={years}
-          setter={setYears}
-        />
-
+        {inputFields.map((field, index) => (
+          <InputField
+            key={index}
+            label={field.label}
+            value={field.value}
+            setter={field.setter}
+            isRate={field.isRate}
+          />
+        ))}
         <button type="submit">Calculate SIP Returns</button>
       </form>
 

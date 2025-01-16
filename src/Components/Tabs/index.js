@@ -1,4 +1,4 @@
-import "./index.css";
+import "./styles.css";
 
 const Tabs = ({ activeTab, setActiveTab }) => {
   return (

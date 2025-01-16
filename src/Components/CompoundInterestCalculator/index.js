@@ -34,42 +34,53 @@ const CompoundInterestCalculator = () => {
     });
   };
 
+  const inputFields = [
+    { label: "Principal Amount", value: principal, setter: setPrincipal },
+    {
+      label: "Rate of Interest (%)",
+      value: rate,
+      setter: setRate,
+      isRate: true,
+    },
+    { label: "Time Period (in years)", value: time, setter: setTime },
+  ];
+  const compoundingOptions = [
+    { value: 1, label: "Annually" },
+    { value: 4, label: "Quarterly" },
+    { value: 12, label: "Monthly" },
+  ];
+
   return (
     <div className="calculator">
       <h2>Compound Interest Calculator</h2>
       <form onSubmit={handleSubmit}>
-        <InputField
-          label="Principal Amount"
-          value={principal}
-          setter={setPrincipal}
-        />
-        <InputField
-          label="Rate of Interest (%)"
-          value={rate}
-          setter={setRate}
-          isRate
-        />
-        <InputField
-          label="Time Period (in years)"
-          value={time}
-          setter={setTime}
-        />
-
+        {inputFields.map((field, index) => (
+          <InputField
+            key={index}
+            label={field.label}
+            value={field.value}
+            setter={field.setter}
+            isRate={field.isRate}
+          />
+        ))}
         <div>
-          <label>Compounding Frequency (per year) : </label>
+          <label>Compounding Frequency (per year): </label>
           <select
             value={compoundFrequency}
             onChange={(e) => setCompoundFrequency(e.target.value)}
           >
-            <option value="1">Annually</option>
-            <option value="4">Quarterly</option>
-            <option value="12">Monthly</option>
+            {compoundingOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
 
         <button type="submit">Calculate</button>
       </form>
-      {formError && <p style={{ color: "red" }}>{formError}</p>}{" "}
+
+      {formError && <p style={{ color: "red" }}>{formError}</p>}
       {result && (
         <div>
           <h3>Invested Amount: ₹{result.investedAmount}</h3>

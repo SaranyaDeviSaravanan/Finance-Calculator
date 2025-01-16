@@ -1,12 +1,11 @@
-const handleNumericInput = (e, setter) => {
+const handleInput = (e, setter, isRate) => {
   const value = e.target.value;
-  setter(value.replace(/[^0-9]/g, ""));
-};
-
-const handleRateInput = (e, setter) => {
-  const value = e.target.value;
-  if (/^\d*\.?\d*$/.test(value)) {
-    setter(value);
+  if (isRate) {
+    if (/^\d*\.?\d*$/.test(value)) {
+      setter(value);
+    }
+  } else {
+    setter(value.replace(/[^0-9]/g, ""));
   }
 };
 
@@ -17,9 +16,7 @@ const InputField = ({ label, value, setter, isRate = false }) => {
       <input
         type="text"
         value={value}
-        onInput={(e) =>
-          isRate ? handleRateInput(e, setter) : handleNumericInput(e, setter)
-        }
+        onInput={(e) => handleInput(e, setter, isRate)}
         placeholder="Enter a number"
       />
     </div>
