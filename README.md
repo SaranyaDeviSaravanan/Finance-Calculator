@@ -9,6 +9,7 @@ This calculator computes the returns from compound interest based on the followi
 <img width="186" alt="image" src="https://github.com/user-attachments/assets/3318df60-8d40-4531-9a5f-0c0a47c68604" />
 
 Where:
+
 A = Total amount (principal + interest)
 P = Principal amount (the initial investment)
 R = Rate of interest (annual rate as a percentage)
@@ -23,6 +24,7 @@ SIP Calculator - Calculates the returns on a monthly SIP (Systematic Investment 
 The formula for SIP Investment is:
 
 <img width="305" alt="image" src="https://github.com/user-attachments/assets/ac195e23-5472-4a0e-a788-11eb32095650" />
+
 Where:
 
 A = Total accumulated value of SIP
